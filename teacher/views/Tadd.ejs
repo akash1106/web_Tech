@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+</head>
+<body>
+    <header>
+        <h2>Mycamu</h2>
+        <ul>
+            <a href="/home"><li>Attendance</li></a>
+            <a href="/leave"><li>Leave</li></a>
+            <!-- <a href="/result"><li>Result</li></a> -->
+            <a href="/add"><li>Add Student</li></a>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="box">
+            <h2>Add Student</h2>
+            <form action="/add_sumbit" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="ADMISSIONNO">ADMISSION NO</label>
+                    <input type="text" id="ADMISSIONNO" name="ADMISSIONNO" required>
+                </div>
+                <div class="form-group">
+                    <label for="ROLLNO">ROLL NO</label>
+                    <input type="text" id="ROLLNO" name="ROLLNO" required>
+                </div>
+                <div class="form-group">
+                    <label for="mail">Mail id</label>
+                    <input type="text" id="mail" name="mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="DEGREE">DEGREE</label>
+                    <input type="text" id="DEGREE" name="DEGREE" required>
+                </div>
+                <div class="form-group">
+                    <label for="DEPARTMENT">DEPARTMENT</label>
+                    <input type="text" id="DEPARTMENT" name="DEPARTMENT" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="box">
+            <h2>Map Teacher</h2>
+            <form action="/teacher_sumbit" method="post">
+                <div class="form-group">
+                    <label for="sc">subject code</label>
+                    <input type="text" id="sc" name="sc" required>
+                </div>
+                <div class="form-group">
+                    <label for="sn">subject name</label>
+                    <input type="text" id="sn" name="sn" required>
+                </div>
+                <div class="form-group">
+                    <label for="sem">semster</label>
+                    <input type="text" id="sem" name="sem" required>
+                </div>
+                <div class="form-group">
+                    <label for="sem">credit</label>
+                    <input type="text" id="credit" name="credit" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacher">teacher</label>
+                    <select id="teachername" name="teachername" required>
+                        <% val.map((item)=>{ %>
+                            <option value="<%= item.id %>"><%= item.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="foot">
+            <div class="copy">
+                <span>© 2024 Mycamu, Inc</span>
+          </div>
+        </div>
+    </footer>
+    <link rel="stylesheet" href="/css/Tadd.css">
+</body>
+</html>

@@ -1,0 +1,124 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+}
+header{
+    width: 100vw;
+    height: 15vh;
+    text-align: center;
+    background-color:rgb(232, 232, 220) ;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+header>h1{
+    margin: 0px;
+    padding: 1.2rem;
+} 
+footer{
+    width: 100vw;
+    height: 10vh;
+    text-align: center;
+    background-color: rgb(232, 232, 220);
+}
+.copy{
+    padding: 1rem;
+}
+header>h2{
+    padding: 3rem;
+    padding-top: 0.5rem;
+}
+.container{
+    display:flex;
+    width: 100vw;
+    min-height: 30vw;
+ 	align-items:center ;
+ 	justify-content: center;
+ 	background: #fff;
+ 	border-radius: 10px;
+ 	flex-direction: column;
+ 	padding: 30px 30px 30px;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+li{
+    margin: 1rem;
+}
+a{
+    text-decoration: none;
+}
+.box{
+    width: 50vw; 
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    border: solid 2px black;
+    padding: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+.menu>button{
+    height: 25px;
+    margin-top: 1.25rem;
+    margin-right: 1.25rem;
+}
+.menu>h2{
+    margin-left: 1.5rem;
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border:solid 2px  black;
+}
+.form-control{
+    width: 50vw;
+    margin-bottom: 25px;
+}
+select{
+    width: 50vw;
+    height: 30px;
+}
+.date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+input[type="date"]{
+    width: 20vw;
+    height: 35px;
+}
+.form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="password"]{
+    width: calc(100% - 10px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  form>button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }

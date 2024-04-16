@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave</title>
+</head>
+<body>
+    <header>
+        <h2>Mycamu</h2>
+        <ul>
+            <a href="/home"><li>Attendance</li></a>
+            <a href="/leave"><li>Leave</li></a>
+            <a href="/profile"><li>Profile</li></a>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="box">
+            <div class="menu">
+                <h2>Leave</h2>
+                <button  onclick="change()">Add Leave Request</button>
+            </div>
+            <div id="map_change">
+                <div class="form-control">
+                    <form action="/leave_sumbit" method="post">
+                        <div class="form-group">
+                            <label for="typeofleave">Type of leave</label>
+                            <select id="leave" name="leave" required>
+                                <option value="Medical Leave">Medical Leave</option>
+                                <option value="On Duty">On Duty</option>
+                            </select>
+                        </div>
+                        <div class="date">
+                            <div class="form-group">
+                                <label for="fromdate">Form Date</label>
+                                <input type="date" id="fdate" name="fdate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="todate">To Date</label>
+                                <input type="date" id="tdate" name="tdate" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Reason for leave</label>
+                            <textarea id="leavereason" name="leavereason" rows="4" cols="50"></textarea>
+                        </div>
+                        <button type="submit">Sumbit</button>
+                    </form>
+                </div>
+            </div>
+            <% data.map((item)=>{ %>
+                <option value="<%= item.id %>"><%= item.name %></option>
+                <div class="content">
+                    <div class="details">
+                        <h4><%= item.fdate %> to <%= item.tdate %></h4>
+                        <p><%= item.reason %></p>
+                    </div>
+                    <div class="Status">
+                        <% if (item.status==1) { %>
+                        <h4>Status: approved</h4>
+                        <% } else if (item.status==2) { %>
+                        <h4>Status: Rejected</h4>
+                        <% } else { %>
+                        <h4>Status: Pending Approval</h4>
+                        <%  } %>
+                    </div>
+                </div>
+            <% }) %>
+            
+        </div>
+    </div>
+    <footer>
+        <div class="foot">
+            <div class="copy">
+                <span>© 2024 Mycamu, Inc</span>
+          </div>
+        </div>
+    </footer>
+    <link rel="stylesheet" href="/css/Sleave.css">
+    <script src="/js/Sleave.js"></script>
+</body>
+</html>

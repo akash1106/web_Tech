@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <h2>Mycamu</h2>
+        <ul>
+            <a href="/home"><li>Attendance</li></a>
+            <a href="/leave"><li>Leave</li></a>
+            <a href="/profile"><li>Profile</li></a>
+        </ul>
+    </header>
+    <div class="container">
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    </div>
+    <footer>
+        <div class="foot">
+            <div class="copy">
+                <span>© 2024 Mycamu, Inc</span>
+          </div>
+        </div>
+    </footer>
+    <link rel="stylesheet" href="/css/home.css">
+    <script>
+        var data = JSON.parse('<%- JSON.stringify(data) %>');
+        var xValues = [];
+        var yValues = [];
+        var barColors = ["red", "green","blue","orange","brown"];
+        
+        for (let index = 0; index < data.length; index++) {
+            xValues.push(data[index].subject_name);
+            yValues.push(data[index].attendance);
+          }
+          yValues.push(45);
+          yValues.push(0);
+
+        new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+            display: true,
+            text: "Attendance"
+            }
+        }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave</title>
+</head>
+<body>
+    <header>
+        <h2>Mycamu</h2>
+        <ul>
+            <a href="/home"><li>Attendance</li></a>
+            <a href="/leave"><li>Leave</li></a>
+            <!-- <a href="/result"><li>Result</li></a> -->
+            <a href="/add"><li>Add Student</li></a>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="box">
+            <% data.forEach(item => { %>
+                <div class="content">
+                    <div class="details">
+                        <h3><%= item.rollno %></h3>
+                        <h4><%= item.fdate %> To <%= item.tdate%></h4>
+                        <p><%=  item.reason %></p>
+                    </div>
+                    <div class="Status">
+                        <form action="/leave_sumbit_a" method="post">
+                            <input type="hidden" value="<%= item.lid %>" name="id"/>
+                            <button style="margin-bottom: 1.5rem;" type="submit">Approved</button>
+                        </form>
+                        <form action="/leave_sumbit_r" method="post">
+                            <input type="hidden" value="<%= item.lid %>" name="id"/>
+                            <button type="submit">Reject</button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+            
+        </div>
+    </div>
+    <footer>
+        <div class="foot">
+            <div class="copy">
+                <span>© 2024 Mycamu, Inc</span>
+          </div>
+        </div>
+    </footer>
+    <link rel="stylesheet" href="/css/Tleave.css">
+</body>
+</html>
+</body>
+</html>

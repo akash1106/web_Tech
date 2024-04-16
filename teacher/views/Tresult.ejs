@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <header>
+        <h2>Mycamu</h2>
+        <ul>
+            <a href="/home"><li>Attendance</li></a>
+            <a href="/leave"><li>Leave</li></a>
+            <!-- <a href="/result"><li>Result</li></a> -->
+            <a href="/add"><li>Add Student</li></a>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="box">
+            <form action="/result_sumbit" method="post">
+                <div class="input-group">
+                    <div class="form-group">
+                        <label for="typeofleave">Class</label>
+                        <select id="leave" name="leave" required>
+                            <option value="cat_1">Cat-1</option>
+                            <option value="cat_B">cat-2</option>
+                            <option value="sem">sem</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="plain">
+                    <label>Student 1<input type="number" name="student1"></label><br>
+                    <label>Student 2<input type="number" name="student2"></label><br>
+                    <label>Student 3<input type="number" name="student3"></label><br>
+                    <label>Student 4<input type="number" name="student4"></label><br>
+                    <label>Student 5<input type="number" name="student5"></label><br>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="foot">
+            <div class="copy">
+                <span>© 2024 Mycamu, Inc</span>
+          </div>
+        </div>
+    </footer>
+    <link rel="stylesheet" href="/css/Thome.css">
+</body>
+</html>
