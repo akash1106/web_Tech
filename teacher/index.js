@@ -13,7 +13,7 @@ app.use(express.static('static'));
 const connection = mysql2.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '110akash62003',
+  password: '',
   database: 'mycamu'
 });
 connection.connect((err) => {
